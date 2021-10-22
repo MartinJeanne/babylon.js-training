@@ -31,9 +31,9 @@ window.addEventListener("resize", function () {
 // Functions
 function buildGround() {
     const groundMat = new BABYLON.StandardMaterial("groundMat");
-    groundMat.diffuseColor = new BABYLON.Color3.Green;
+    groundMat.diffuseTexture = new BABYLON.Texture("data/grass.png")
 
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 });
+    const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 20, height: 20 });
     ground.material = groundMat;
     return ground;
 }
@@ -41,7 +41,7 @@ function buildGround() {
 function buildBox(width) {
     const boxMat = new BABYLON.StandardMaterial("boxMat");
     if (width == 2) {
-        boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/semihouse.png")
+        boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/semihouse.png");
     }
     else {
         boxMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png");
